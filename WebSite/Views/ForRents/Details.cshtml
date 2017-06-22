@@ -31,7 +31,7 @@
         @if (Model.image == null)
 
         {
-            @Html.ActionLink("Back to List", "Index", "Home");
+            @Html.ActionLink("Back to List", "Index", "ForRents");
                 return;
             }
 
@@ -62,13 +62,13 @@
 <p>
     @if (User.Identity.IsAuthenticated)
     {
-        @Html.ActionLink("Back to List", "Index");
+        @Html.ActionLink("Back to List", "Index", "ForRents");
         <br>
         @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
 
     }
     else
     {
-        @Html.ActionLink("Back to List", "Index", "ForRent");
+        @Html.ActionLink("Back to List", "Index", "ForRents");
     }
 </p>
