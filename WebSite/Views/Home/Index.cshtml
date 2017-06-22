@@ -1,0 +1,73 @@
+﻿@model IEnumerable<WebSite.Models.AdTable>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div id="imagecarousel" class="carousel slide" data-interval="6000" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#imagecarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#imagecarousel" data-slide-to="1"></li>
+        <li data-target="#imagecarousel" data-slide-to="2"></li>
+        <li data-target="#imagecarousel" data-slide-to="3"></li>
+
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="~/images/a.jpg" class="img-responsive">
+            <div class="carousel-caption">
+                <div class="jumbotron">
+                    <h1>Бесплатные объявления</h1>
+                    <p> Хотите максимально быстро найти работу или работников, продать или купить машину, снять или сдать квартиру - наша доска объявлений самое правильное место.</p>
+                    <p><a class="btn btn-default btn-lg" href="#" role="button">Открыть Продам</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="~/images/b.jpg" class="img-responsive" />
+            <div class="carousel-caption">
+                <div class="jumbotron">
+                    <h1>Без регистрации</h1>
+                    <p> Уборка, Строители, Преподаватели, Воспитатели, Продавцы, Кассиры, Водители, Диспетчера, Продажи, Агенты, Менеджера</p>
+                    <p><a class="btn btn-default btn-lg" href="#" role="button">Открыть Работа</a></p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="~/images/c.jpg" class="img-responsive" />
+            <div class="carousel-caption">
+                <div class="jumbotron">
+                    <h1>Быстрый Доступ</h1>
+                    <p> Нужен Дом, Квартира, Комната, Гостиничный номер, Склад или Офис - вам сюда!</p>
+                    <p><a class="btn btn-default btn-lg" href="#" role="button">Открыть Недвижимость</a></p>
+                </div>
+            </div>
+        </div>
+       
+        <div class="item">
+            <img src="~/images/d.jpg" class="img-responsive" />
+            <div class="carousel-caption">
+                <div class="jumbotron">
+                    <h1>Без регистрации</h1>
+                    <p> Ищите перевозку в Чикаго, услуги по ремонту дома, кондиционера, компьютера, или вашего авто? Нужна помощь в организации свадьбы или нужен адвокат ?
+                        Все это в разделе услуги в </p>
+                    <p><a class="btn btn-default btn-lg" href="#" role="button">Открыть Услуги</a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <a href="#imagecarousel" class="carousel-control left" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a href="#imagecarousel" class="carousel-control right" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+   

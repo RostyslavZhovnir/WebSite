@@ -1,0 +1,56 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    line-height: 1.4;
+    background-color: #ebebeb;
+    
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+pre {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display:block;
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #000000;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: rgba(255, 255, 255, 0.52);
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.jumbotron {
+    background: rgb(255, 255, 255); /* This is for ie8 and below */
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.carousel-caption {
+    top: 120px;
+    bottom: auto;
+}

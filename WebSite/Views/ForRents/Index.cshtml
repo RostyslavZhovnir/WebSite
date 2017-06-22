@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WebSite.Models.ForRent>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>Бесплатные объявления</h1>
+    <p> Хотите максимально быстро найти работу или работников, продать или купить машину, снять или сдать квартиру - наша доска объявлений самое правильное место.</p>
+    <p><a class="btn btn-default btn-lg"@Html.ActionLink("Добавить бесплатное объявление", "Create")</a></p>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+     
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+          <pre>  @Html.DisplayFor(modelItem => item.Description) </pre>
+        </td>
+        <td>
+          <pre>  @Html.DisplayFor(modelItem => item.phone) </pre>
+        </td>
+        @*<td>
+        @if (item.image != null && item.image1 == null)
+        {
+            var img64 = Convert.ToBase64String(item.image);
+            var img = string.Format("data:image/png;base64," + img64);
+            <img src="@img" style="max-height:75px; max-width:150px" />
+        }
+
+        else if (item.image != null && item.image1 != null)
+        {
+            var img64 = Convert.ToBase64String(item.image);
+            var img = string.Format("data:image/png;base64," + img64);
+
+            var img65 = Convert.ToBase64String(item.image1);
+            var img1 = string.Format("data:image/png;base64," + img65);
+
+
+            <img src="@img" style="max-height:75px; max-width:150px" />
+                <img src="@img1" style="max-height:75px; max-width:150px" />
+        }
+        
+        
+        </td>*@
+        <td>
+            @if (User.Identity.IsAuthenticated)
+            {
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) 
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            }
+            else
+            {
+
+         <pre>   @Html.ActionLink("Details", "Details", new { id = item.ID }) </pre> 
+
+            }
+
+          
+        </td>
+    </tr>
+}
+
+</table>
