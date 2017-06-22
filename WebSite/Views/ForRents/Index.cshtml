@@ -31,7 +31,7 @@
           <pre>  @Html.DisplayFor(modelItem => item.Description) </pre>
         </td>
         <td>
-          <pre>  @Html.DisplayFor(modelItem => item.phone) </pre>
+          @Html.DisplayFor(modelItem => item.phone) 
         </td>
         @*<td>
         @if (item.image != null && item.image1 == null)
@@ -66,7 +66,7 @@
             else
             {
 
-         <pre>   @Html.ActionLink("Details", "Details", new { id = item.ID }) </pre> 
+          @Html.ActionLink("Details", "Details", new { id = item.ID })  
 
             }
 
