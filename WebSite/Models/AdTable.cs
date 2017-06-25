@@ -24,10 +24,10 @@ namespace WebSite.Models
 
     public int ID { get; set; }
         [Required(ErrorMessage = "Description is required")]
-
+        [StringLength(1000,MinimumLength =6, ErrorMessage = "Description must to me from 6 to 1000 symbols lenght")]
         public string Description { get; set; }
         [Required(ErrorMessage = "Phone is required")]
-
+        [RegularExpression(@"\d{3,10}",ErrorMessage ="Phone should contains up to 10 numbers only")]
         public string phone { get; set; }
         [DisplayName("Select image #1")]
         public byte[] image { get; set; }
