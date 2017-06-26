@@ -119,7 +119,7 @@ namespace WebSite.Controllers
 
                 db.AdTable.Add(adTable);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "AdTables");
             }
             }
             
