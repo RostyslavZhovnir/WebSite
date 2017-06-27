@@ -13,7 +13,7 @@ namespace WebSite.Controllers
 
         public ActionResult Index()
         {
-            return View(db.AdTable.ToList());
+            return View();
         }
 
         public ActionResult About()

@@ -21,24 +21,11 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Description" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="1000" />
           <Property Name="phone" Type="varchar" MaxLength="10" />
           <Property Name="image" Type="varbinary(max)" />
           <Property Name="image1" Type="varbinary(max)" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Testik.dbo.ImageStore' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="ImageStore">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="FileContent" />
-            <PropertyRef Name="MimeType" />
-            <PropertyRef Name="FileName" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FileContent" Type="image" Nullable="false" />
-          <Property Name="MimeType" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="FileName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="money" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -49,34 +36,10 @@ warning 6002: The table/view 'Testik.dbo.ImageStore' does not have a primary key
           <Property Name="role" Type="char" MaxLength="1" />
           <Property Name="pass" Type="varchar" MaxLength="20" />
         </EntityType>
-        <Association Name="FK_ImageStore_AdTable">
-          <End Role="AdTable" Type="Self.AdTable" Multiplicity="1" />
-          <End Role="ImageStore" Type="Self.ImageStore" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AdTable">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ImageStore">
-              <PropertyRef Name="ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="TestikModelStoreContainer">
           <EntitySet Name="AdTable" EntityType="Self.AdTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ForRent" EntityType="Self.ForRent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ImageStore" EntityType="Self.ImageStore" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ImageStore].[ID] AS [ID], 
-    [ImageStore].[FileContent] AS [FileContent], 
-    [ImageStore].[MimeType] AS [MimeType], 
-    [ImageStore].[FileName] AS [FileName]
-    FROM [dbo].[ImageStore] AS [ImageStore]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK_ImageStore_AdTable" Association="Self.FK_ImageStore_AdTable">
-            <End Role="AdTable" EntitySet="AdTable" />
-            <End Role="ImageStore" EntitySet="ImageStore" />
-          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -92,7 +55,6 @@ warning 6002: The table/view 'Testik.dbo.ImageStore' does not have a primary key
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="image1" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="image2" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="ImageStore" Relationship="TestikModel.FK_ImageStore_AdTable" FromRole="AdTable" ToRole="ImageStore" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -106,47 +68,18 @@ warning 6002: The table/view 'Testik.dbo.ImageStore' does not have a primary key
         <EntityContainer Name="TestikEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AdTable" EntityType="Self.AdTable" />
           <EntitySet Name="User" EntityType="Self.User" />
-          <EntitySet Name="ImageStore" EntityType="TestikModel.ImageStore" />
-          <AssociationSet Name="FK_ImageStore_AdTable" Association="TestikModel.FK_ImageStore_AdTable">
-            <End Role="AdTable" EntitySet="AdTable" />
-            <End Role="ImageStore" EntitySet="ImageStore" />
-          </AssociationSet>
           <EntitySet Name="ForRent" EntityType="TestikModel.ForRent" />
         </EntityContainer>
-        <EntityType Name="ImageStore">
-          <Key>
-            <PropertyRef Name="FileContent" />
-            <PropertyRef Name="MimeType" />
-            <PropertyRef Name="FileName" />
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FileContent" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <Property Name="MimeType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FileName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="AdTable" Relationship="TestikModel.FK_ImageStore_AdTable" FromRole="ImageStore" ToRole="AdTable" />
-        </EntityType>
-        <Association Name="FK_ImageStore_AdTable">
-          <End Type="TestikModel.AdTable" Role="AdTable" Multiplicity="1" />
-          <End Type="TestikModel.ImageStore" Role="ImageStore" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AdTable">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ImageStore">
-              <PropertyRef Name="ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="ForRent">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
           <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="image1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -176,19 +109,10 @@ warning 6002: The table/view 'Testik.dbo.ImageStore' does not have a primary key
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ImageStore">
-            <EntityTypeMapping TypeName="TestikModel.ImageStore">
-              <MappingFragment StoreEntitySet="ImageStore">
-                <ScalarProperty Name="FileName" ColumnName="FileName" />
-                <ScalarProperty Name="MimeType" ColumnName="MimeType" />
-                <ScalarProperty Name="FileContent" ColumnName="FileContent" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ForRent">
             <EntityTypeMapping TypeName="TestikModel.ForRent">
               <MappingFragment StoreEntitySet="ForRent">
+                <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="image1" ColumnName="image1" />
                 <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="phone" ColumnName="phone" />

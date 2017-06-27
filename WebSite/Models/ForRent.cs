@@ -27,5 +27,6 @@ namespace WebSite.Models
         public byte[] image { get; set; }
         [DisplayName("Select image #2")]
         public byte[] image1 { get; set; }
+        public Nullable<decimal> price { get; set; }
     }
 }

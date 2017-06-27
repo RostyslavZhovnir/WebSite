@@ -16,10 +16,17 @@ namespace WebSite.Controllers
 
         // GET: ForRents
    
-        public ActionResult Index()
+        public ActionResult Index( int ?price)
+
         {
-            return View(db.ForRent.ToList());
-        }
+            if (price == null)
+            {
+                return View(db.ForRent.ToList());
+            }
+                IEnumerable<ForRent> forrent = db.ForRent.Where(x => x.price <= price);
+                return View(forrent);
+            }
+        
 
         // GET: ForRents/Details/5
         public ActionResult Details(int? id)

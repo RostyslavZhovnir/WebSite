@@ -16,15 +16,9 @@ namespace WebSite.Models
 
     public partial class AdTable
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AdTable()
-        {
-            this.ImageStore = new HashSet<ImageStore>();
-        }
-
-    public int ID { get; set; }
+        public int ID { get; set; }
         [Required(ErrorMessage = "Description is required")]
-        [StringLength(1000,MinimumLength =2, ErrorMessage = "Description must be from 2 to 1000 symbols")]
+        [StringLength(1000, MinimumLength = 2, ErrorMessage = "Description must be from 2 to 1000 symbols")]
         public string Description { get; set; }
         [Required(ErrorMessage = "Phone is required")]
         [RegularExpression(@"\d{10,13}", ErrorMessage = "Phone should contains numbers only and be at least 10 numbers lenght ")]
@@ -34,8 +28,5 @@ namespace WebSite.Models
         [DisplayName("Select image #2")]
         public byte[] image1 { get; set; }
         public byte[] image2 { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ImageStore> ImageStore { get; set; }
     }
 }

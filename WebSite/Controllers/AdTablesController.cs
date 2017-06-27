@@ -15,7 +15,7 @@ namespace WebSite.Controllers
         private TestikEntities db = new TestikEntities();
 
         // GET: AdTables
-        [Authorize]
+        //[Authorize]
         public ActionResult Index()
         {
             return View(db.AdTable.ToList());
