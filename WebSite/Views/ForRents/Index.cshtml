@@ -21,7 +21,34 @@
             @Html.DisplayNameFor(model => model.phone)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.price)
+         @*@Html.DisplayNameFor(model => model.price)*@
+            
+         <a type="text/html"
+         
+         class="text-center"
+         href="#article-editor"
+         data-toggle="modal">price</a>
+
+            <div class="modal fade" id="article-editor" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <a class="close" data-dismiss="modal">&times;</a>
+                            <h3>Select Max price to show</h3>
+                        </div>
+                        <div class="modal-body">
+                            @using (Html.BeginForm("Index", "ForRents", new { id = "PriceForm" }, FormMethod.Get))
+            {
+                                @Html.TextBox("price")
+                                <input type="submit"  value="Show Result"  />
+                            }
+                        </div>
+
+                    </div>
+                </div>
+                    </div>
+
+
         </th>
      
         <th></th>
@@ -39,6 +66,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.price)
         </td>
+        
         @*<td>
         @if (item.image != null && item.image1 == null)
         {

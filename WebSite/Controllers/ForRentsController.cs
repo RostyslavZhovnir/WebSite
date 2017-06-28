@@ -23,7 +23,7 @@ namespace WebSite.Controllers
             {
                 return View(db.ForRent.ToList());
             }
-                IEnumerable<ForRent> forrent = db.ForRent.Where(x => x.price <= price);
+            IEnumerable<ForRent> forrent = db.ForRent.Where(x => x.price <= price);
                 return View(forrent);
             }
         

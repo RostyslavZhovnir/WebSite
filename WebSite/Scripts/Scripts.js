@@ -5,3 +5,4 @@
         txtMsg.value = txtMsg.value.substring(0, CharLength);
     }
 }
+
