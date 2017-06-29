@@ -14,20 +14,19 @@
 
 <table class="table">
     <tr>
-        <th>
+        <th width="77%">
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th>
+        <th width="13%">
             @Html.DisplayNameFor(model => model.phone)
         </th>
-        <th>
+        <th width="10%">
          @*@Html.DisplayNameFor(model => model.price)*@
             
-         <a type="text/html"
-         
-         class="text-center"
-         href="#article-editor"
-         data-toggle="modal">price</a>
+             <a type="text/html"
+                     class="text-center"
+                     href="#article-editor"
+                     data-toggle="modal">price</a>    
 
             <div class="modal fade" id="article-editor" role="dialog">
                 <div class="modal-dialog modal-sm">
@@ -61,11 +60,11 @@
           <pre>  @Html.DisplayFor(modelItem => item.Description) </pre>
         </td>
         <td>
-          @Html.DisplayFor(modelItem => item.phone) 
+            <pre >   @Html.DisplayFor(modelItem => item.phone) </pre>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.price)
-        </td>
+            $  @Html.DisplayFor(modelItem => item.price)
+</td>
         
         @*<td>
         @if (item.image != null && item.image1 == null)
