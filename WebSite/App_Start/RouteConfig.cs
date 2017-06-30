@@ -18,6 +18,11 @@ namespace WebSite
                 url: "Jobs",
                 defaults: new { controller = "AdTables", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+               name: "Details",
+               url: "Jobs/Details/{id}",
+               defaults: new { controller = "AdTables", action = "Details", id = UrlParameter.Optional }
+           );
 
             routes.MapRoute(
                 name: "Default",
