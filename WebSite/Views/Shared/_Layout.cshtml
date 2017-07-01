@@ -24,6 +24,13 @@
                     <li>@Html.ActionLink("Jobs", "Index", "AdTables")</li>
                     <li>@Html.ActionLink("Services", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Apartments for rent ", "Index", "ForRents")</li>
+                    <li> @Html.ActionLink("LogIn", "Login", "User")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li> @Html.ActionLink("LogOut", "Logout", "User")</li>
+                    }
+                   
+                    
                 </ul>
             </div>
         </div>

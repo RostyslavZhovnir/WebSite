@@ -10,9 +10,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<p>
-    @Html.ActionLink("LogOut", "Logout","User")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -34,10 +32,20 @@
             @Html.DisplayFor(modelItem => item.phone)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
+            @if (User.Identity.IsAuthenticated)
+            {
+                @Html.ActionLink(" |Edit| ", "Edit", new { id = item.ID }) 
+                @Html.ActionLink(" |Details| ", "Details", new { id = item.ID }) 
+                @Html.ActionLink(" |Delete| ", "Delete", new { id = item.ID })  
+            }
+            else
+            {
+
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+
+            }
+
+
     </tr>
 }
 
