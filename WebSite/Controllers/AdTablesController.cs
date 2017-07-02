@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebSite.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WebSite.Controllers
 {
@@ -16,9 +18,9 @@ namespace WebSite.Controllers
 
         // GET: AdTables
         //[Authorize]
-        public ActionResult Index()
+        public ActionResult Index(int?page)
         {
-            return View(db.AdTable.ToList());
+            return View(db.AdTable.ToList().ToPagedList(page??1,50));
         }
 
         // GET: AdTables/Details/5

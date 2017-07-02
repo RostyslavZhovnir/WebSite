@@ -1,4 +1,6 @@
-﻿@model IEnumerable<WebSite.Models.ForRent>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<WebSite.Models.ForRent>
 
 @{
     ViewBag.Title = "Index";
@@ -15,10 +17,10 @@
 <table class="table">
     <tr>
         <th width="77%">
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.First().Description)
         </th>
         <th width="13%">
-            @Html.DisplayNameFor(model => model.phone)
+            @Html.DisplayNameFor(model => model.First().phone)
         </th>
         <th width="10%">
          @*@Html.DisplayNameFor(model => model.price)*@
@@ -26,7 +28,8 @@
              <a type="text/html"
                      class="text-center"
                      href="#article-editor"
-                     data-toggle="modal">price</a>    
+                     data-toggle="modal">price <span class="glyphicon glyphicon-sort"></span> </a>  
+            
 
             <div class="modal fade" id="article-editor" role="dialog">
                 <div class="modal-dialog modal-sm">
@@ -113,3 +116,4 @@
 }
 
 </table>
+<div>@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</div>

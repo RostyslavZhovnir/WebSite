@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebSite.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WebSite.Controllers
 {
@@ -16,15 +18,15 @@ namespace WebSite.Controllers
 
         // GET: ForRents
    
-        public ActionResult Index( int ?price)
+        public ActionResult Index( int ?price, int? page)
 
         {
             if (price == null)
             {
-                return View(db.ForRent.ToList());
+                return View(db.ForRent.ToList().ToPagedList(page ?? 1, 50));
             }
             IEnumerable<ForRent> forrent = db.ForRent.Where(x => x.price <= price);
-                return View(forrent);
+                return View(forrent.ToList().ToPagedList(page ?? 1, 50));
             }
         
 

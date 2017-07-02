@@ -1,4 +1,6 @@
-﻿@model IEnumerable<WebSite.Models.AdTable>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<WebSite.Models.AdTable>
 
 @{
     ViewBag.Title = "Index";
@@ -14,10 +16,10 @@
 <table class="table">
     <tr>
         <th>
-           @Html.DisplayNameFor(model => model.Description)
+           @Html.DisplayNameFor(model => model.First().Description)
         </th>
         <th>
-             @Html.DisplayNameFor(model => model.phone)
+             @Html.DisplayNameFor(model => model.First().phone)
         </th>
         <th></th>
     </tr>
@@ -50,3 +52,4 @@
 }
 
 </table>
+<div>@Html.PagedListPager(Model,page=>Url.Action("Index",new { page}))</div>
