@@ -23,7 +23,8 @@ namespace WebSite.Controllers
         {
             if (price == null)
             {
-                return View(db.ForRent.ToList().ToPagedList(page ?? 1, 50));
+                IEnumerable<ForRent> forrents = db.ForRent.ToList().OrderByDescending(y => y.ID);
+                return View(forrents.ToList().ToPagedList(page ?? 1, 50));
             }
             IEnumerable<ForRent> forrent = db.ForRent.Where(x => x.price <= price);
                 return View(forrent.ToList().ToPagedList(page ?? 1, 50));
@@ -56,7 +57,7 @@ namespace WebSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Description,phone")] ForRent forRent, HttpPostedFileBase image1, HttpPostedFileBase image2)
+        public ActionResult Create([Bind(Include = "ID,Description,phone,price")] ForRent forRent, HttpPostedFileBase image1, HttpPostedFileBase image2)
         {
             try
 

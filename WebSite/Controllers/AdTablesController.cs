@@ -20,7 +20,8 @@ namespace WebSite.Controllers
         //[Authorize]
         public ActionResult Index(int?page)
         {
-            return View(db.AdTable.ToList().ToPagedList(page??1,50));
+            IEnumerable<AdTable> jobs = db.AdTable.ToList().OrderByDescending(y => y.ID);
+            return View(jobs.ToList().ToPagedList(page ?? 1, 50));
         }
 
         // GET: AdTables/Details/5
