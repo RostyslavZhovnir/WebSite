@@ -48,6 +48,15 @@ pre {
 .jumbotron {
     background: rgb(255, 255, 255); /* This is for ie8 and below */
     background: rgba(255, 255, 255, 0.45);
+  
+}
+
+.jumbotron-ForRent {
+    background-image: url('../images/jumbotron.jpg');
+    
+}
+.jumbotron-AdTable {
+    background-image: url('../images/jumbotron1.jpg');
 }
 
 .carousel-caption {

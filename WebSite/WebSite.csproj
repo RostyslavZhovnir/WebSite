@@ -200,6 +200,9 @@
     <Content Include="images\b.jpg" />
     <Content Include="images\c.jpg" />
     <Content Include="images\d.jpg" />
+    <Content Include="images\jumbotron.jpg" />
+    <Content Include="images\jumbotron1.jpg" />
+    <Content Include="images\jumbotron2.jpg" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
