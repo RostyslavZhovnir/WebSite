@@ -1,7 +1,6 @@
 ﻿@using PagedList;
 @using PagedList.Mvc;
 @model IPagedList<WebSite.Models.ForRent>
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -15,6 +14,9 @@
     <p><a class="btn btn-default btn-lg" @Html.ActionLink("Добавить бесплатное объявление", "Create")</a></p> 
 </div>
 
+
+@*//DropDownList*@
+@*@Html.DropDownList("price", ViewBag.pricelist as SelectList, "Please Select")*@
 
 <table class="table">
     <tr>
@@ -57,10 +59,17 @@
      
         <th></th>
     </tr>
-
+    
+   
+      
+  
+      
+                  
+          
 @foreach (var item in Model.OrderByDescending(i => i.ID))
-{
-    <tr> 
+  
+{      
+    <tr>
         <td>
           <pre>  @Html.DisplayFor(modelItem => item.Description) </pre>
         </td>
@@ -70,7 +79,7 @@
         <td>
             $  @Html.DisplayFor(modelItem => item.price)
 </td>
-        
+
         @*<td>
         @if (item.image != null && item.image1 == null)
         {

@@ -21,6 +21,13 @@ namespace WebSite.Controllers
         public ActionResult Index( int ?price, int? page)
 
         {
+            
+            //Create DropDown list from ForRent Table price column and show it in view
+            //var xz = db.ForRent.Select(x => x.price).ToList();
+            //SelectList list = new SelectList(xz, "price");
+            //ViewBag.pricelist = list;
+
+
             if (price == null)
             {
                 IEnumerable<ForRent> forrents = db.ForRent.ToList().OrderByDescending(y => y.ID);
@@ -28,8 +35,11 @@ namespace WebSite.Controllers
             }
             IEnumerable<ForRent> forrent = db.ForRent.Where(x => x.price <= price);
                 return View(forrent.ToList().ToPagedList(page ?? 1, 50));
+
+            
+
             }
-        
+       
 
         // GET: ForRents/Details/5
         public ActionResult Details(int? id)
