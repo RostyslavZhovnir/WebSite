@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.First().Description)
         </th>
         <th width="13%">
-            @Html.DisplayNameFor(model => model.First().phone)
+            @Html.DisplayNameFor(model => model.First().phone) 
         </th>
         <th width="10%">
          @*@Html.DisplayNameFor(model => model.price)*@
@@ -77,7 +77,7 @@
             <pre >   @Html.DisplayFor(modelItem => item.phone) </pre>
         </td>
         <td>
-            $  @Html.DisplayFor(modelItem => item.price)
+            $  @Html.DisplayFor(modelItem => item.price).ToString()
 </td>
 
         @*<td>

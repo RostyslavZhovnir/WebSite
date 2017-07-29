@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using WebSite.Models;
 using PagedList;
 using PagedList.Mvc;
+using System.Globalization;
 
 namespace WebSite.Controllers
 {
@@ -21,13 +22,12 @@ namespace WebSite.Controllers
         public ActionResult Index( int ?price, int? page)
 
         {
-            
+
             //Create DropDown list from ForRent Table price column and show it in view
             //var xz = db.ForRent.Select(x => x.price).ToList();
             //SelectList list = new SelectList(xz, "price");
             //ViewBag.pricelist = list;
-
-
+       
             if (price == null)
             {
                 IEnumerable<ForRent> forrents = db.ForRent.ToList().OrderByDescending(y => y.ID);
