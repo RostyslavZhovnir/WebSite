@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Ukrainian Community in Chicago</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -25,15 +25,12 @@
                     <li><div class="hidden-xs hidden-sm"><img src="~/images/logo.jpg" /></div></li>
                     <li>@Html.ActionLink("Home Page", "Index", "Home")</li>
                     <li>@Html.ActionLink("Jobs / Робота", "Index", "AdTables")</li>
-                    <li>@Html.ActionLink("Services / Послуги", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("For Sale / Продам", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("For rent / Оренда житла", "Index", "ForRents")</li>
+                    <li>@Html.ActionLink("Services / Послуги", "Index", "Services")</li>
+                    <li>@Html.ActionLink("For Sale / Продам", "Index", "ForSale")</li>
+                    <li>@Html.ActionLink("For Rent / Оренда житла", "Index", "ForRents")</li>
                     <li>@Html.ActionLink("Contact US /Контакти ", "Contact", "Home")</li>
                    
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li> @Html.ActionLink("LogOut", "Logout", "User")</li>
-                    }
+                    
                    
                     
                 </ul>
@@ -45,6 +42,10 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Created by Rostyslav Zhovnir</p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                 @Html.ActionLink("LogOut", "Logout", "User")
+            }
         </footer>
     </div>
 

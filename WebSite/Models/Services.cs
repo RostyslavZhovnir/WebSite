@@ -14,10 +14,9 @@ namespace WebSite.Models
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class ForRent
+    public partial class Services
     {
         public int ID { get; set; }
-
         [Required(ErrorMessage = "Description is required")]
         [StringLength(1000, MinimumLength = 2, ErrorMessage = "Description must be from 2 to 1000 symbols")]
         public string Description { get; set; }
@@ -31,8 +30,6 @@ namespace WebSite.Models
 
         [DisplayName("Select image #2")]
         public byte[] image1 { get; set; }
-
-        [RegularExpression(@"\d{1,10}", ErrorMessage = "Price should contains numbers only")]
-        public Nullable<decimal> price { get; set; }
+        public byte[] image2 { get; set; }
     }
 }

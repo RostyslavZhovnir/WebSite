@@ -1,16 +1,16 @@
 ﻿@using PagedList;
 @using PagedList.Mvc;
-@model IPagedList<WebSite.Models.ForRent>
+@model IPagedList<WebSite.Models.ForSale>
 @{
-    ViewBag.Title = "For Rent";
+    ViewBag.Title = "For Sale";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron jumbotron-ForRent">
+<div class="jumbotron jumbotron-ForSale">
 
     
-    <h1>Оренда нерухомості в Чікаго та околицях</h1>
-    <p> Хочете максимально швидко знайти нове житло чи здати своє в оренду - наш сайт саме те місце!</p>
+    <h1>Продаєте авто, телефон чи ноутбук ? Додайте оголошення сюди</h1>
+    <p> З нашими покупцями чи продавцями завжди можна домовитись </p>
     <p><a class="btn btn-default btn-lg" @Html.ActionLink("Додати оголошення / Create new", "Create")</a></p> 
 </div>
 
@@ -43,7 +43,7 @@
                             <h3>Select Max price to show</h3>
                         </div>
                         <div class="modal-body">
-                            @using (Html.BeginForm("Index", "ForRents", new { id = "PriceForm" }, FormMethod.Get))
+                            @using (Html.BeginForm("Index", "ForSale", new { id = "PriceForm" }, FormMethod.Get))
             {
                                 @Html.TextBox("price")
                                 <input type="submit"  value="Show Result"  />

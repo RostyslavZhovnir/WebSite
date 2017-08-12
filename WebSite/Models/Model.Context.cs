@@ -28,5 +28,7 @@ namespace WebSite.Models
         public virtual DbSet<AdTable> AdTable { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<ForRent> ForRent { get; set; }
+        public virtual DbSet<ForSale> ForSale { get; set; }
+        public virtual DbSet<Services> Services { get; set; }
     }
 }

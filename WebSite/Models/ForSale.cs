@@ -14,7 +14,7 @@ namespace WebSite.Models
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class ForRent
+    public partial class ForSale
     {
         public int ID { get; set; }
 

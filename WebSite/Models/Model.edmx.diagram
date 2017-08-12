@@ -5,9 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9b9c4c3f638e4b0c8b1f60326f14f688" Name="Diagram1">
-        <EntityTypeShape EntityType="TestikModel.AdTable" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="TestikModel.User" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TestikModel.ForRent" Width="1.5" PointX="2.75" PointY="2.75" />
+        <EntityTypeShape EntityType="TestikModel.AdTable" Width="1.5" PointX="6.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestikModel.User" Width="1.5" PointX="2.625" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestikModel.ForRent" Width="1.5" PointX="4.875" PointY="1" />
+        <EntityTypeShape EntityType="TestikModel.ForSale" Width="1.5" PointX="8.625" PointY="1" />
+        <EntityTypeShape EntityType="TestikModel.Services" Width="1.5" PointX="10.625" PointY="1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

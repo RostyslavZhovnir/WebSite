@@ -1,4 +1,4 @@
-﻿@model WebSite.Models.AdTable
+﻿@model WebSite.Models.Services
 
 @{
     ViewBag.Title = "Create new";
@@ -7,10 +7,10 @@
 <script src="~/Scripts/Scripts.js"></script>
 
 <div class="text-muted">
-    <h4>Create New Jobs / Додати нове оголошення в розділ Робота </h4>
+    <h4>Create New / Додати нове оголошення в розділ Послуги </h4>
 </div>
 
-@using (Html.BeginForm("Create", "AdTables", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Create", "Services", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -77,7 +77,7 @@
 
 
 <div>
-    @Html.ActionLink("Back to List", "Index","AdTables")
+    @Html.ActionLink("Back to List", "Index","Services")
 </div>
 
 @section Scripts {

@@ -27,6 +27,28 @@
           <Property Name="image1" Type="varbinary(max)" />
           <Property Name="price" Type="money" />
         </EntityType>
+        <EntityType Name="ForSale">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nchar" MaxLength="1000" />
+          <Property Name="phone" Type="varchar" MaxLength="10" />
+          <Property Name="image" Type="varbinary(max)" />
+          <Property Name="image1" Type="varbinary(max)" />
+          <Property Name="price" Type="money" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nchar" MaxLength="1000" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="image" Type="varbinary(max)" />
+          <Property Name="image1" Type="varbinary(max)" />
+          <Property Name="image2" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -39,6 +61,8 @@
         <EntityContainer Name="TestikModelStoreContainer">
           <EntitySet Name="AdTable" EntityType="Self.AdTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ForRent" EntityType="Self.ForRent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ForSale" EntityType="Self.ForSale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -69,6 +93,8 @@
           <EntitySet Name="AdTable" EntityType="Self.AdTable" />
           <EntitySet Name="User" EntityType="Self.User" />
           <EntitySet Name="ForRent" EntityType="TestikModel.ForRent" />
+          <EntitySet Name="ForSale" EntityType="TestikModel.ForSale" />
+          <EntitySet Name="Services" EntityType="TestikModel.Services" />
         </EntityContainer>
         <EntityType Name="ForRent">
           <Key>
@@ -80,6 +106,28 @@
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="image1" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="ForSale">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="image1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="image1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="image2" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -113,6 +161,30 @@
             <EntityTypeMapping TypeName="TestikModel.ForRent">
               <MappingFragment StoreEntitySet="ForRent">
                 <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="image1" ColumnName="image1" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ForSale">
+            <EntityTypeMapping TypeName="TestikModel.ForSale">
+              <MappingFragment StoreEntitySet="ForSale">
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="image1" ColumnName="image1" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="TestikModel.Services">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="image2" ColumnName="image2" />
                 <ScalarProperty Name="image1" ColumnName="image1" />
                 <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="phone" ColumnName="phone" />

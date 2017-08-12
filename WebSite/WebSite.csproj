@@ -156,6 +156,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ForSaleController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\AdTablesController.cs" />
     <Compile Include="Controllers\ForRentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -168,6 +170,9 @@
     </Compile>
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\ForRent.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ForSale.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model.Context.cs">
@@ -184,6 +189,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Services.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -208,6 +216,8 @@
     <Content Include="images\jumbotron.jpg" />
     <Content Include="images\jumbotron1.jpg" />
     <Content Include="images\jumbotron2.jpg" />
+    <Content Include="images\jumbotron3.jpg" />
+    <Content Include="images\jumbotron4.jpg" />
     <Content Include="images\logo.jpg" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -285,6 +295,16 @@
     <Content Include="Views\ForRents\Details.cshtml" />
     <Content Include="Views\ForRents\Edit.cshtml" />
     <Content Include="Views\ForRents\Index.cshtml" />
+    <Content Include="Views\Services\Create.cshtml" />
+    <Content Include="Views\Services\Delete.cshtml" />
+    <Content Include="Views\Services\Details.cshtml" />
+    <Content Include="Views\Services\Edit.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\ForSale\Create.cshtml" />
+    <Content Include="Views\ForSale\Delete.cshtml" />
+    <Content Include="Views\ForSale\Details.cshtml" />
+    <Content Include="Views\ForSale\Edit.cshtml" />
+    <Content Include="Views\ForSale\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

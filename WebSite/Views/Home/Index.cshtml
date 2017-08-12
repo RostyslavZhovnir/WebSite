@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<WebSite.Models.AdTable>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @*Show this div on Small screens*@
 <div class="hidden-md hidden-lg ">
 
-    <div class="jumbotron jumbotron-ForRent">
-        <h1>Безкоштовні оголошення для української громади в Чікаго</h1>
+    <div class="jumbotron jumbotron-Index">
+        <h1>Безкоштовні оголошення української громади в Чікаго</h1>
         <p>Хочете швидко знайти роботу, продати ваше авто чи знайти нове житло ? Ви в правильному місці !!</p>
     </div>
 
@@ -33,7 +33,7 @@
 
                             <h1>Безкоштовні оголошення для української громади в Чікаго</h1>
                             <p>Хочете швидко знайти роботу, продати ваше авто чи знайти нове житло ? Ви в правильному місці !!</p>
-                            <p><a class="btn btn-default btn-lg" href="#" role="button">For Sale / Продам</a></p>
+                            <p><a class="btn btn-default btn-lg" href="ForSale/Index" role="button">For Sale / Продам</a></p>
                         </div>
                     </div>
                 </div>
@@ -42,8 +42,8 @@
                     <img src="~/images/b.jpg" class="img-responsive" />
                     <div class="carousel-caption">
                         <div class="jumbotron">
-                            <h1>Без реєстрації</h1>
-                            <p> Будова, Водії, Продавці, Диспетчера, Менеджера..</p>
+                            <h1>Швидка подача без реєстрації</h1>
+                            <p> Будова, Водії, Продавці, Диспетчера, Репетитори, Сантехніки, Електрики - спеціалісти всіх напрямків</p>
                             <p><a class="btn btn-default btn-lg" href="AdTables/Index" role="button">Jobs / Робота</a></p>
                         </div>
 
@@ -66,10 +66,8 @@
                     <div class="carousel-caption">
                         <div class="jumbotron">
                             <h1>Без терміну давності</h1>
-                            <p>
-                                Зломалося авто чи кондиціонер в будинку? Потрібен ремонт компютера чи телефону? Фотограф чи адвокат?
-                            </p>
-                            <p><a class="btn btn-default btn-lg" href="#" role="button">Services / Послуги</a></p>
+                            <p> Зломалося авто чи кондиціонер в будинку? Потрібен ремонт компютера чи телефону? Фотограф чи адвокат?</p>
+                            <p><a class="btn btn-default btn-lg" href="Services/Index" role="button">Services / Послуги</a></p>
                         </div>
 
                     </div>

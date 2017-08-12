@@ -1,21 +1,19 @@
 ﻿@using PagedList;
 @using PagedList.Mvc;
-@model IPagedList<WebSite.Models.AdTable>
+@model IPagedList<WebSite.Models.Services>
 
 @{
-    ViewBag.Title = "Jobs";
+    ViewBag.Title = "Services";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron jumbotron-AdTable">
-    <h1>Знайдіть роботу вашої мрії</h1>
-    <p> На нашому сайті ви завжди можете взнати свіжі новини ринка праці, знайти нові вакансії та проаналізувати тенденцію заробітніх плат</p>
+<div class="jumbotron jumbotron-Services">
+    <h1>Послуги</h1>
+    <p> Організація весіль, ремонт авто, побутової техніки, транспортні послуги...<br/> Потрібен електик чи сантехнік, маляр чи штукатур, повар чи прибиральниця - всі види послуг ви знайдете тут! </p>
     <p><a class="btn btn-default btn-lg" @Html.ActionLink("Додати оголошення / Create new", "Create")</a></p>
 </div>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
+
 
 <table class="table">
     <tr>

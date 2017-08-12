@@ -1,0 +1,73 @@
+﻿@model WebSite.Models.Services
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+         <pre>@Html.DisplayFor(model => model.Description)</pre>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+     
+        <dd>
+            @if (Model.image == null)
+
+                {
+                @Html.ActionLink("Back to List", "Index", "Services");
+                return;
+            }
+
+            @if (Model.image != null && Model.image1 == null)
+            {
+                var img64 = Convert.ToBase64String(Model.image);
+                var img = string.Format("data:image/png;base64," + img64);
+                <img src="@img" style="max-height:300px; max-width:500px" />
+            }
+
+            @if (Model.image != null && Model.image1 !=null)
+            {
+                var img64 = Convert.ToBase64String(Model.image);
+                var img = string.Format("data:image/png;base64," + img64);
+
+                var img65 = Convert.ToBase64String(Model.image1);
+                var img1 = string.Format("data:image/png;base64," + img65);
+
+
+                <img src="@img" style="max-height:300px; max-width:500px" />
+                <img src="@img1" style="max-height:300px; max-width:500px" />
+            }
+                
+            
+        </dd>
+    </dl>
+</div>
+<p> @if (User.Identity.IsAuthenticated)
+{
+   @Html.ActionLink("Back to List", "Index");
+    <br>
+   @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+
+}
+else
+{
+@Html.ActionLink("Back to List", "Index","Services");
+}
+</p>

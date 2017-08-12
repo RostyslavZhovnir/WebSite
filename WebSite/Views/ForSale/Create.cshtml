@@ -1,4 +1,4 @@
-﻿@model WebSite.Models.ForRent
+﻿@model WebSite.Models.ForSale
 
 @{
     ViewBag.Title = "Create new";
@@ -7,10 +7,10 @@
 <script src="~/Scripts/Scripts.js"></script>
 
 <div class="text-muted">
-   <h4>Create New For Rent / Додати нове оголошення в розділ Оренда житла</h4>
+   <h4>Create New For Sale / Додати нове оголошення в розділ Продам</h4>
 </div>
 
-@using (Html.BeginForm("Create", "ForRents", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Create", "ForSale", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -49,8 +49,7 @@
 
             <br>
 
-            @*</div>*@
-            @*.........................................*@
+          
 
             <div class="form-group">
 
@@ -77,5 +76,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List","Index", "ForRents")
+    @Html.ActionLink("Back to List","Index", "ForSale")
 </div>
