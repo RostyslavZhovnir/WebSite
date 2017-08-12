@@ -9,9 +9,9 @@
 <div class="jumbotron jumbotron-ForRent">
 
     
-    <h1>Аренда жилья в Чикаго и окресносях</h1>
-    <p> Хотите максимально быстро снять или сдать квартиру - наша доска объявлений самое правильное место.</p>
-    <p><a class="btn btn-default btn-lg" @Html.ActionLink("Добавить бесплатное объявление", "Create")</a></p> 
+    <h1>Оренда нерухомості в Чікаго та околицях</h1>
+    <p> Хочете максимально швидко знайти нове житло чи здати своє в оренду - наш сайт саме те місце!</p>
+    <p><a class="btn btn-default btn-lg" @Html.ActionLink("Додати оголошення / Create new", "Create")></a></p> 
 </div>
 
 
@@ -74,7 +74,7 @@
           <pre>  @Html.DisplayFor(modelItem => item.Description) </pre>
         </td>
         <td>
-            <pre >   @Html.DisplayFor(modelItem => item.phone) </pre>
+             @Html.DisplayFor(modelItem => item.phone)
         </td>
         <td>
             $  @Html.DisplayFor(modelItem => item.price).ToString()

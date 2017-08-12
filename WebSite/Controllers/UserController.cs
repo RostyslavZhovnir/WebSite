@@ -37,7 +37,7 @@ namespace WebSite.Controllers
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "AdTables");
         }
 
     }

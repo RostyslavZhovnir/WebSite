@@ -28,17 +28,20 @@ textarea {
 
 pre {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display:block;
+    display:contents;
     padding: 0px;
     margin: 0px;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.5;
     color: #000000;
     word-break: break-all;
     word-wrap: break-word;
     background-color: rgba(255, 255, 255, 0.52);
     border: 1px solid #ffffff;
     border-radius: 4px;
+    width:800px;
+    white-space:pre-line;
+    
 }
 
 .carousel-inner > .item > img {
@@ -87,13 +90,27 @@ pre {
     border-color: #808080;
 }
 
-a {
-    color: #434649;
-    text-decoration: none;
-}
-
     a:hover,
     a:focus {
         color: #7e8286;
         text-decoration: underline;
     }
+
+.navbar-nav > li > a {
+    padding-top: 75px;
+    padding-bottom: 8px;
+    padding-left: 9px;
+}
+    .carousel-caption {
+    top:25%;
+    bottom: auto;
+}
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size:medium;
+    font-weight: 200;
+}
+.jumbotron h1, .jumbotron .h1 {
+    color: inherit;
+    font-size:xx-large;
+}
