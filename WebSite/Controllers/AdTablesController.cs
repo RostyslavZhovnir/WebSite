@@ -62,7 +62,7 @@ namespace WebSite.Controllers
                 {
                     db.AdTable.Add(adTable);
                     db.SaveChanges();
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "AdTables");
                 }
                 else if (image1 == null && image2 != null)
                 {
@@ -88,7 +88,7 @@ namespace WebSite.Controllers
                     image1.InputStream.Read(adTable.image, 0, image1.ContentLength);
                     db.AdTable.Add(adTable);
                     db.SaveChanges();
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "AdTables");
                 }
                 else
                 if (image1.ContentType.ToLower() != "image/jpg" &&
