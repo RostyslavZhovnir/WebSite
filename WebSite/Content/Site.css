@@ -124,7 +124,12 @@ pre {
 
 
 }
-
+.jumbotron h6 {
+    margin-bottom: 15px;
+    font-size: medium;
+    font-weight: 200;
+    
+}
 .jumbotron h1, .jumbotron .h1 {
     color: inherit;
     font-size:xx-large;
