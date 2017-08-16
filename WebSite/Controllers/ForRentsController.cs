@@ -17,16 +17,15 @@ namespace WebSite.Controllers
     {
         private TestikEntities db = new TestikEntities();
 
+        
+
         // GET: ForRents
    
         public ActionResult Index( int ?price, int? page)
 
         {
 
-            //Create DropDown list from ForRent Table price column and show it in view
-            //var xz = db.ForRent.Select(x => x.price).ToList();
-            //SelectList list = new SelectList(xz, "price");
-            //ViewBag.pricelist = list;
+           
        
             if (price == null)
             {
@@ -41,7 +40,7 @@ namespace WebSite.Controllers
             }
        
 
-        // GET: ForRents/Details/5
+        // GET: ForRents/Details
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -69,11 +68,22 @@ namespace WebSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Description,phone,price")] ForRent forRent, HttpPostedFileBase image1, HttpPostedFileBase image2)
         {
-            try
+           
+            try { 
 
-            {
+            //{    //Check if Description already exist in database
+            //    var y = forRent.Description.ToLower();
+            //    List<ForRent> a = db.ForRent.Where(x => x.Description.ToLower() == y).ToList();
+            //    if (a.Capacity > 0)
+            //    {
+            //        ViewBag.Ms = "Element already exist";
+            //        return View();
+            //    }
+
                 if (image1 == null && image2 == null)
                 {
+                    
+
                     db.ForRent.Add(forRent);
                     db.SaveChanges();
                     return RedirectToAction("Index", "ForRents");
@@ -150,7 +160,7 @@ namespace WebSite.Controllers
             return View(forRent);
         }
 
-        // GET: ForRents/Edit/5
+        // GET: ForRents/Edit
        
         public ActionResult Edit(int? id)
         {
@@ -166,9 +176,7 @@ namespace WebSite.Controllers
             return View(forRent);
         }
 
-        // POST: ForRents/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: ForRents/Edit
         
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -183,7 +191,7 @@ namespace WebSite.Controllers
             return View(forRent);
         }
 
-        // GET: ForRents/Delete/5
+        // GET: ForRents/Delete
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -198,7 +206,7 @@ namespace WebSite.Controllers
             return View(forRent);
         }
 
-        // POST: ForRents/Delete/5
+        // POST: ForRents/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
