@@ -24,7 +24,6 @@ namespace WebSite.Models
 
         [DataType(DataType.PhoneNumber)]
         [Required(ErrorMessage = "Phone is required")]
-        [RegularExpression(@"\d{10,13}", ErrorMessage = "Phone should contains numbers only and be at least 10 numbers lenght ")]
         public string phone { get; set; }
 
         [DisplayName("Select image #1")]

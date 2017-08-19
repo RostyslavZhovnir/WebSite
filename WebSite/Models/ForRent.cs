@@ -22,8 +22,8 @@ namespace WebSite.Models
         [StringLength(1000, MinimumLength = 2, ErrorMessage = "Description must be from 2 to 1000 symbols")]
         public string Description { get; set; }
 
+        
         [Required(ErrorMessage = "Phone is required")]
-        [RegularExpression(@"\d{10,13}", ErrorMessage = "Phone should contains numbers only and be at least 10 numbers lenght ")]
         public string phone { get; set; }
 
         [DisplayName("Select image #1")]

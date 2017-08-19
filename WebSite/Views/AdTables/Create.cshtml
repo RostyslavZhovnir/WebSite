@@ -5,6 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script src="~/Scripts/Scripts.js"></script>
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="~/Scripts/jquery.inputmask.bundle.js"></script>
+<script src="~/Scripts/PhoneInputMasc.js"></script>
+
 
 <div class="text-muted">
     <h4>Create New Jobs / Додати нове оголошення в розділ Робота </h4>
@@ -26,9 +30,9 @@
             @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
            
             
-            <br>
+            <br> 
             @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
-
+        
         <div class="form-group">
 
             @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -42,11 +46,10 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "control-label col-md-2" })
           
-                    @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control"} })
                     <br>
 
-           
-                @*.........................................*@
+     
 
                 <div class="form-group">
                     

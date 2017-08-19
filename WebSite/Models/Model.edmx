@@ -11,7 +11,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nchar" MaxLength="1000" Nullable="false" />
-          <Property Name="phone" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="image" Type="varbinary(max)" />
           <Property Name="image1" Type="varbinary(max)" />
           <Property Name="image2" Type="varbinary(max)" />
@@ -22,7 +22,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nchar" MaxLength="1000" />
-          <Property Name="phone" Type="varchar" MaxLength="10" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
           <Property Name="image" Type="varbinary(max)" />
           <Property Name="image1" Type="varbinary(max)" />
           <Property Name="price" Type="money" />
@@ -33,7 +33,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nchar" MaxLength="1000" />
-          <Property Name="phone" Type="varchar" MaxLength="10" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
           <Property Name="image" Type="varbinary(max)" />
           <Property Name="image1" Type="varbinary(max)" />
           <Property Name="price" Type="money" />
@@ -44,7 +44,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nchar" MaxLength="1000" Nullable="false" />
-          <Property Name="phone" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
           <Property Name="image" Type="varbinary(max)" />
           <Property Name="image1" Type="varbinary(max)" />
           <Property Name="image2" Type="varbinary(max)" />
@@ -75,7 +75,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="phone" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="image1" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="image2" Type="Binary" MaxLength="Max" FixedLength="false" />
@@ -102,7 +102,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
-          <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="image1" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
@@ -113,7 +113,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
-          <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="image1" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
@@ -124,7 +124,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="1000" FixedLength="true" Unicode="true" />
-          <Property Name="phone" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="image1" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="image2" Type="Binary" MaxLength="Max" FixedLength="false" />

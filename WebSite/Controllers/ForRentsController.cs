@@ -24,9 +24,7 @@ namespace WebSite.Controllers
         public ActionResult Index( int ?price, int? page)
 
         {
-
-           
-       
+                            
             if (price == null)
             {
                 IEnumerable<ForRent> forrents = db.ForRent.ToList().OrderByDescending(y => y.ID);
@@ -36,7 +34,6 @@ namespace WebSite.Controllers
                 return View(forrent.ToList().ToPagedList(page ?? 1, 50));
 
             
-
             }
        
 
@@ -62,8 +59,7 @@ namespace WebSite.Controllers
         }
 
         // POST: ForRents/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Description,phone,price")] ForRent forRent, HttpPostedFileBase image1, HttpPostedFileBase image2)
@@ -80,7 +76,10 @@ namespace WebSite.Controllers
             //        return View();
             //    }
 
-                if (image1 == null && image2 == null)
+           
+           
+
+            if (image1 == null && image2 == null)
                 {
                     
 
