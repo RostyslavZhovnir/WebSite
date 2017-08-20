@@ -210,9 +210,15 @@
     <Content Include="Content\Site.css" />
     <Content Include="images\a.jpg" />
     <Content Include="images\b.jpg" />
+    <None Include="images\background.jpg" />
+    <None Include="images\backgroundforrent.jpg" />
+    <Content Include="images\backgroundforsale.jpg" />
+    <Content Include="images\backgroundservices.jpg" />
+    <None Include="images\butterflies3.png" />
     <Content Include="images\c.jpg" />
     <Content Include="images\ContactUS.png" />
     <Content Include="images\d.jpg" />
+    <None Include="images\grass.png" />
     <Content Include="images\jumbotron.jpg" />
     <Content Include="images\jumbotron1.jpg" />
     <Content Include="images\jumbotron2.jpg" />
@@ -251,6 +257,13 @@
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery.event.frame.js" />
+    <Content Include="Scripts\jquery.jparallax.min.js" />
+    <Content Include="Scripts\MyParallaxServices.js" />
+    <Content Include="Scripts\MyParallaxForRent.js" />
+    <Content Include="Scripts\MyParallaxForSale.js" />
+    <Content Include="Scripts\MyParallax.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
     <Content Include="Scripts\PhoneInputMasc.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -310,6 +323,7 @@
     <Content Include="Views\ForSale\Details.cshtml" />
     <Content Include="Views\ForSale\Edit.cshtml" />
     <Content Include="Views\ForSale\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

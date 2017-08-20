@@ -44,6 +44,7 @@ pre {
     
 }
 
+
 .carousel-inner > .item > img {
     margin: 0 auto;
 }
@@ -54,30 +55,111 @@ pre {
   
 }
 
-.jumbotron-ForRent {
-    background-image: url('../images/jumbotron.jpg');
-    
-}
-.jumbotron-AdTable {
-    background-image: url('../images/jumbotron1.jpg');
-}
-
-.jumbotron-Services {
-    background-image: url('../images/jumbotron2.jpg');
-}
-
-.jumbotron-ForSale {
-    background-image: url('../images/jumbotron3.jpg');
-}
 
 .jumbotron-Index {
     background-image: url('../images/jumbotron4.jpg');
 }
 
 .carousel-caption {
-    top: 120px;
-    bottom: auto;
+    position:absolute;
+    max-width:700px;
+    width:auto;
+    
+    padding: 0 20px;
+    margin:200px auto auto ;
+    
+    text-align: center;
 }
+@media only screen and (max-width: 990px) {
+    .carousel-caption {
+        position: absolute;
+        max-width: 550px;
+        width: auto;
+        padding: 0 20px;
+        margin: 0;
+        text-align: center;
+    }
+    }
+@media only screen and (max-width: 990px) {
+    .jumbotron h1, .jumbotron .h1 {
+        position: relative;
+        margin-bottom: 5px;
+        font-size: 18px;
+        font-weight: 200;
+        width: auto;
+        color:black
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .jumbotron p {
+        position: relative;
+        margin-bottom: 15px;
+        font-size: 12px;
+        font-weight: 200;
+        overflow: hidden;
+        width: auto;
+        color:black;
+    }
+
+    .jumbotron {
+        padding-top: 2px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        color: inherit;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .btn {
+        display: inline-block;
+        padding: 3px 12px;
+        margin-bottom: 0;
+        font-size: 10px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    }
+
+
+
+
+@media only screen and (min-width: 600px) {
+    .jumbotron h1, .jumbotron .h1 {
+        position: relative;
+        margin-bottom: 5px;
+        font-size: 30px;
+        font-weight: 200;
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .jumbotron p {
+        position: relative;
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: 200;
+        overflow: hidden;
+        width: auto;
+    }
+}
+
+
+
 .modal-dialog {
     width: 400px;
     height: 50px;
@@ -114,24 +196,89 @@ pre {
     padding-left: 9px;
 }
     .carousel-caption {
-    top:25%;
-    bottom: auto;
+    top:5px;
+    bottom:30px;
+    width:auto;
+    height:auto;
 }
-.jumbotron p {
-    margin-bottom: 15px;
-    font-size:medium;
-    font-weight: 200;
 
-
-}
 .jumbotron h6 {
+    position: relative;
     margin-bottom: 15px;
-    font-size: medium;
+    font-size: 25px;
+    overflow: hidden;
     font-weight: 200;
-    
+    width: auto;
 }
-.jumbotron h1, .jumbotron .h1 {
-    color: inherit;
-    font-size:xx-large;
+
+
+
+#parallax {
+    display:block;
+    position: relative;
+    overflow:hidden;
+    width: auto;
+    height: 423px;
+    background-image: url('../images/background.jpg');
+}
+#parallaxforrent {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    height: 423px;
+    background-image: url('../images/backgroundforrent.jpg');
+}
+
+#parallaxforsale {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    height: 423px;
+    background-image: url('../images/backgroundforsale.jpg');
+}
+
+#parallaxservices {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width:auto;
+    height: 423px;
+    background-image: url('../images/backgroundservices.jpg');
+}
+
+
+.parallax-layer {
+    position: absolute;
+}
+.content-b {
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 24px;
+    padding-top:60px;
+    padding-bottom:20px;
+    padding-left: 10%;
+    padding-right:10%;
+    color: white;
+    width:auto
+}
+ .content-b h1 {
+    margin-bottom: 5px;
+    font-size: 35px;
+    font-weight: 200;
+    width:auto
+ }
+ .content-b h6 {
+ 
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 200;
+    letter-spacing:4px;
+    width:auto
     
+    
+
 }

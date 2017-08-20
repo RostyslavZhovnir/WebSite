@@ -3,20 +3,28 @@
 @model IPagedList<WebSite.Models.ForSale>
 @{
     ViewBag.Title = "For Sale";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="~/Scripts/jquery.jparallax.min.js"></script>
+<script src="~/Scripts/jquery.event.frame.js"></script>
+<script src="~/Scripts/MyParallaxForSale.js"></script>
 
-<div class="jumbotron jumbotron-ForSale">
-
-    
-    <h1>Продаєте авто, телефон чи ноутбук ? Додайте оголошення сюди</h1>
-    <h6><strong> З нашими покупцями чи продавцями завжди можна домовитись </strong> </h6>
-    <p><a class="btn btn-default btn-lg" @Html.ActionLink("Додати оголошення / Create new", "Create")</a></p> 
+<div id="parallaxforsale" class="clear">
+    <div class="parallax-layer" style="width:1800px; height:375px;">
+        <img src="~/images/grass.png" alt="" style="width:1800px; height:375px;" />
+    </div>
+    <div class="parallax-layer" style="width:1600px; height:400px;">
+        <img src="~/images/butterflies3.png" alt="" style="width:1700px; height:425px;" />
+    </div>
+    <div class="content-b">
+        <h1>Продаєте авто, телефон чи ноутбук?</h1>
+        <h6>З нашими покупцями чи продавцями завжди можна домовитись</h6>
+        <p class="content-b"><a class="btn btn-default" @Html.ActionLink("Додати оголошення / Create new", "Create")</a></p>
+    </div>
 </div>
 
-
-@*//DropDownList*@
-@*@Html.DropDownList("price", ViewBag.pricelist as SelectList, "Please Select")*@
 
 <table class="table">
     <tr>
@@ -24,17 +32,13 @@
             @Html.DisplayNameFor(model => model.First().Description)
         </th>
         <th width="13%">
-            @Html.DisplayNameFor(model => model.First().phone) 
+            @Html.DisplayNameFor(model => model.First().phone)
         </th>
         <th width="10%">
-         @*@Html.DisplayNameFor(model => model.price)*@
-            
              <a type="text/html"
                      class="text-center"
                      href="#article-editor"
-                     data-toggle="modal">price <span class="glyphicon glyphicon-sort"></span> </a>  
-            
-
+                     data-toggle="modal">price <span class="glyphicon glyphicon-sort"></span> </a>
             <div class="modal fade" id="article-editor" role="dialog">
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
@@ -49,26 +53,14 @@
                                 <input type="submit"  value="Show Result"  />
                             }
                         </div>
-
                     </div>
                 </div>
                     </div>
-
-
         </th>
-     
         <th></th>
     </tr>
-    
-   
-      
-  
-      
-                  
-          
 @foreach (var item in Model.OrderByDescending(i => i.ID))
-  
-{      
+{
     <tr>
         <td>
           <pre>  @Html.DisplayFor(modelItem => item.Description) </pre>
@@ -79,30 +71,6 @@
         <td>
             $  @Html.DisplayFor(modelItem => item.price).ToString()
 </td>
-
-        @*<td>
-        @if (item.image != null && item.image1 == null)
-        {
-            var img64 = Convert.ToBase64String(item.image);
-            var img = string.Format("data:image/png;base64," + img64);
-            <img src="@img" style="max-height:75px; max-width:150px" />
-        }
-
-        else if (item.image != null && item.image1 != null)
-        {
-            var img64 = Convert.ToBase64String(item.image);
-            var img = string.Format("data:image/png;base64," + img64);
-
-            var img65 = Convert.ToBase64String(item.image1);
-            var img1 = string.Format("data:image/png;base64," + img65);
-
-
-            <img src="@img" style="max-height:75px; max-width:150px" />
-                <img src="@img1" style="max-height:75px; max-width:150px" />
-        }
-        
-        
-        </td>*@
         <td>
             @if (User.Identity.IsAuthenticated)
             {
@@ -112,19 +80,10 @@
             }
             else
             {
-
                 @Html.ActionLink("Details", "Details", new { id = item.ID })
-
             }
-
-
-
-
-
-          
         </td>
     </tr>
 }
-
 </table>
 <div>@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</div>

@@ -5,79 +5,74 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*Show this div on Small screens*@
-<div class="hidden-md hidden-lg ">
 
-    <div class="jumbotron jumbotron-Index">
-        <h1><strong>Оголошення української громади в Чікаго</strong></h1>
-        <p><strong>в Чікаго та околицях. Оренда житла в Чікаго. Робота в США. Все в одному місці !!</strong> </p>
-    </div>
 
-</div>
 
-@*Show this div on medium and large screens*@
-    <div class="hidden-sm hidden-xs">
-        <div id="imagecarousel" class="carousel slide" data-interval="6000" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#imagecarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#imagecarousel" data-slide-to="1"></li>
-                <li data-target="#imagecarousel" data-slide-to="2"></li>
-                <li data-target="#imagecarousel" data-slide-to="3"></li>
 
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="~/images/a.jpg" class="img-responsive">
-                    <div class="carousel-caption">
-                        <div class="jumbotron">
+    <div id="imagecarousel" class="carousel slide" data-interval="6000" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#imagecarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#imagecarousel" data-slide-to="1"></li>
+            <li data-target="#imagecarousel" data-slide-to="2"></li>
+            <li data-target="#imagecarousel" data-slide-to="3"></li>
 
-                            <h1>Оголошення української громади в Чікаго</h1>
-                            <p>Робота в Чікаго та околицях. Оренда житла в Чікаго. Робота в США. Все в одному місці !!</p>
-                            <p><a class="btn btn-default btn-lg" href="ForSale/Index" role="button">For Sale / Продам</a></p>
-                        </div>
-                    </div>
-                </div>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="~/images/a.jpg" class="img-responsive">
+                <div class="carousel-caption">
+                    <div class="jumbotron">
 
-                <div class="item">
-                    <img src="~/images/b.jpg" class="img-responsive" />
-                    <div class="carousel-caption">
-                        <div class="jumbotron">
-                            <h1>Швидка подача без реєстрації</h1>
-                            <p> Jobs в Чікаго: Будова, Водії, Продавці, Диспетчера, Репетитори, Сантехніки, Електрики - спеціалісти всіх напрямків</p>
-                            <p><a class="btn btn-default btn-lg" href="AdTables/Index" role="button">Jobs / Робота</a></p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="~/images/c.jpg" class="img-responsive" />
-                    <div class="carousel-caption">
-                        <div class="jumbotron">
-                            <h1>Оренда житла в Чікаго та околицях</h1>
-                            <p> Потрібна кімната чи квартира, склад або паркінг - вам сюди!</p>
-                            <p><a class="btn btn-default btn-lg" href="ForRents/Index" role="button">For Rent / Оренда житла</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="~/images/d.jpg" class="img-responsive" />
-                    <div class="carousel-caption">
-                        <div class="jumbotron">
-                            <h1>Послуги в Чікаго</h1>
-                            <p> Зломалося авто чи кондиціонер в будинку? Потрібен ремонт компютера чи телефону? Фотограф чи адвокат?</p>
-                            <p><a class="btn btn-default btn-lg" href="Services/Index" role="button">Services / Послуги</a></p>
-                        </div>
+                        <h1>Оголошення української громади в Чікаго</h1>
+                        <p>Робота в Чікаго та околицях. Оренда житла в Чікаго. Робота в США.</p>
+                        <a class="btn btn-default" href="ForSale/Index" role="button">For Sale / Продам</a>
 
                     </div>
                 </div>
             </div>
-            <a href="#imagecarousel" class="carousel-control left" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a href="#imagecarousel" class="carousel-control right" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
+
+            <div class="item">
+                <img src="~/images/b.jpg" class="img-responsive" />
+                <div class="carousel-caption">
+                    <div class="jumbotron">
+                        <h1>Робота в Чікаго</h1>
+                        <p> Jobs в Чікаго: Будова, Водії, Продавці, Диспетчера, Сантехніки, Електрики - спеціалісти всіх напрямків</p>
+                        <p><a class="btn btn-default" href="AdTables/Index" role="button">Jobs / Робота</a></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="~/images/c.jpg" class="img-responsive" />
+                <div class="carousel-caption">
+                    <div class="jumbotron">
+                        <h1>Оренда житла в Чікаго</h1>
+                        <p> Потрібна кімната чи квартира, склад або паркінг - вам сюди!</p>
+                        <p><a class="btn btn-default" href="ForRents/Index" role="button">For Rent / Оренда житла</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="~/images/d.jpg" class="img-responsive" />
+                <div class="carousel-caption">
+                    <div class="jumbotron">
+                        <h1>Послуги в Чікаго</h1>
+                        <p> Зломалося авто чи кондиціонер в будинку? Потрібен фотограф чи адвокат?</p>
+                        <p><a class="btn btn-default" href="Services/Index" role="button">Services / Послуги</a></p>
+                    </div>
+
+                </div>
+            </div>
         </div>
+        <a href="#imagecarousel" class="carousel-control left" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#imagecarousel" class="carousel-control right" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
     </div>
+    
+
+

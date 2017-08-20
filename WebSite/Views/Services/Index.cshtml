@@ -4,14 +4,30 @@
 
 @{
     ViewBag.Title = "Services";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="~/Scripts/jquery.jparallax.min.js"></script>
+<script src="~/Scripts/jquery.event.frame.js"></script>
+<script src="~/Scripts/MyParallaxServices.js"></script>
 
-<div class="jumbotron jumbotron-Services">
-    <h1>Послуги</h1>
-    <h6><strong> Організація весіль, ремонт авто, побутової техніки, транспортні послуги...<br/> Потрібен електик чи сантехнік, маляр чи штукатур, повар чи прибиральниця - всі види послуг ви знайдете тут! </strong></h6>
-    <p><a class="btn btn-default btn-lg" @Html.ActionLink("Додати оголошення / Create new", "Create")</a></p>
+
+<div id="parallaxservices" class="clear">
+    <div class="parallax-layer" style="width:1800px; height:375px;">
+        <img src="~/images/grass.png" alt="" style="width:1800px; height:375px;" />
+    </div>
+    <div class="parallax-layer" style="width:1600px; height:400px;">
+        <img src="~/images/butterflies3.png" alt="" style="width:1700px; height:425px;" />
+    </div>
+    <div class="content-b">
+        <h1>Послуги в Чікаго</h1>
+        <h6>Організація весіль, ремонт авто, побутової техніки, транспортні послуги...<br /> Потрібен електик чи сантехнік, маляр чи штукатур, повар чи прибиральниця - всі види послуг ви знайдете тут! </h6>
+        <p class="content-b"><a class="btn btn-default" @Html.ActionLink("Додати оголошення / Create new", "Create")</a></p>
+    </div>
 </div>
+
+
 
 
 

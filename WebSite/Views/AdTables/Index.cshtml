@@ -4,18 +4,32 @@
 
 @{
     ViewBag.Title = "Jobs";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
 
-<div class="jumbotron jumbotron-AdTable">
-    <h1>Робота в Чікаго</h1>
-    <h6><strong> На нашому сайті ви завжди можете взнати свіжі новини ринка праці, знайти нові вакансії та проаналізувати тенденцію заробітніх плат</strong></h6>
-    <p><a class="btn btn-default btn-lg" @Html.ActionLink("Додати оголошення / Create new", "Create")</a></p>
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="~/Scripts/jquery.jparallax.min.js"></script>
+<script src="~/Scripts/jquery.event.frame.js"></script>
+<script src="~/Scripts/MyParallax.js"></script>
+
+
+<div id="parallax" class="clear">
+    <div class="parallax-layer" style="width:1800px; height:375px;">
+        <img src="~/images/grass.png" alt="" style="width:1800px; height:375px;" />
+    </div>
+    <div class="parallax-layer" style="width:1600px; height:400px;">
+        <img src="~/images/butterflies3.png" alt="" style="width:1700px; height:425px;" />
+    </div>
+    <div class="content-b">
+        <h1>Робота в Чікаго</h1>
+        <h6>На нашому сайті ви завжди можете взнати свіжі новини ринка праці, знайти нові вакансії та проаналізувати тенденцію заробітніх плат</h6>
+        <a class="btn btn-default" @Html.ActionLink("Додати оголошення / Create new", "Create")></a>
+    </div>
 </div>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
+
+
 
 <table class="table">
     <tr>
