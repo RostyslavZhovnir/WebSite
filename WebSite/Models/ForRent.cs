@@ -24,6 +24,7 @@ namespace WebSite.Models
 
         
         [Required(ErrorMessage = "Phone is required")]
+        [RegularExpression(@"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}", ErrorMessage = "Phone number is not full ")]
         public string phone { get; set; }
 
         [DisplayName("Select image #1")]

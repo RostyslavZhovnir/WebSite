@@ -24,9 +24,10 @@
     <div class="content-b">
         <h1>Робота в Чікаго</h1>
         <h6>На нашому сайті ви завжди можете взнати свіжі новини ринка праці, знайти нові вакансії та проаналізувати тенденцію заробітніх плат</h6>
-        <a class="btn btn-default" @Html.ActionLink("Додати оголошення / Create new", "Create")></a>
+        <p class="content-b"><a class="btn btn-default" @Html.ActionLink("Додати оголошення / Create new", "Create")</a></p>
     </div>
 </div>
+
 
 
 
@@ -37,37 +38,37 @@
             @Html.DisplayNameFor(model => model.First().Description)
         </th>
         <th width="13%">
-             @Html.DisplayNameFor(model => model.First().phone)
+            @Html.DisplayNameFor(model => model.First().phone)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model.OrderByDescending(i => i.ID))
-{
-    <tr>
-        <td>
-            <pre>@Html.DisplayFor(modelItem => item.Description)</pre> 
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.phone)
-        </td>
-        <td>
-            @if (User.Identity.IsAuthenticated)
-            {
-                @Html.ActionLink(" |Edit| ", "Edit", new { id = item.ID }) 
-                @Html.ActionLink(" |Details| ", "Details", new { id = item.ID }) 
-                @Html.ActionLink(" |Delete| ", "Delete", new { id = item.ID })  
-            }
-            else
-            {
+    @foreach (var item in Model.OrderByDescending(i => i.ID))
+    {
+        <tr>
+            <td>
+                <pre>@Html.DisplayFor(modelItem => item.Description)</pre>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink(" |Edit| ", "Edit", new { id = item.ID })
+                    @Html.ActionLink(" |Details| ", "Details", new { id = item.ID })
+                    @Html.ActionLink(" |Delete| ", "Delete", new { id = item.ID })
+                }
+                else
+                {
 
-                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
 
-            }
+                }
 
 
-    </tr>
-}
+        </tr>
+    }
 
 </table>
-<div>@Html.PagedListPager(Model,page=>Url.Action("Index",new { page}))</div>
+<div>@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</div>

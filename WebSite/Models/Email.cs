@@ -8,12 +8,12 @@ namespace WebSite.Models
 {
     public class Email
     {
-        [Required(ErrorMessage = "Message Text is required")]
+        [Required(ErrorMessage = "Text Message  is required")]
         [StringLength(1000, MinimumLength = 2, ErrorMessage = "Description must be from 2 to 1000 symbols")]
         public string Message { get; set; }
 
         [Required(ErrorMessage = "Phone is required")]
-        [RegularExpression(@"\d{10,13}", ErrorMessage = "Phone should contains numbers only and be at least 10 numbers lenght ")]
+        [RegularExpression(@"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}", ErrorMessage = "Phone number is not full ")]
         public string phone { get; set; }
 
         [Required(ErrorMessage = "Email is required")]
