@@ -1,6 +1,0 @@
-Repeat some block of code :
-
-<p ng-repeat-start="item in items">
-.
-.
-<br ng-repeat-end />

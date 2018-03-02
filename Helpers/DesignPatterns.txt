@@ -1,0 +1,27 @@
+Creattional Patterns: (deals with object creation and initialization)
+
+Prototype Pattern this is like Chess game Initial Setup
+Builder Pattern this is like Multi course Dinner where we have Drink,Main Course, Desert..
+Singleton Pattern this is we have to make sure that we have only one instance of particular class
+Factory Pattern this is
+
+Structural Patterns: (How objects are composed. Relationship between objects..)
+Proxy Pattert this is object representing another object
+Decorator this is like 10 types of Pizza whits 3 types of toppings
+Facade this is when single class represent an entire subsusten (EX. Buy Book online button is Facade for steps (Check if Book avaliable in DB, Generate response, send payment, send confirmation...))
+Adapter this is like Power Charger Adapters (convert different types of plugs to one which we need)
+Flyweight this is like
+
+
+Behavioral: (Disscus how different objects contact with each other)
+Chain of Resonsibility this is like Loan process when we go from agent to manager than to his manager. We have chain...
+Iterator Pattern this like buttons on TV Remote Next and Back
+State this is like dimmer switch with levels (low, normal, hight bright)
+Strategy this is
+Observer this is like Online Bidding
+Visitor this is like Taxi company works
+Template Method this is like Building Plan with Electric,Plumbing Plans..We can update each features separaterylly
+Command
+Momento
+Mediator this is like Air Traffic Controll when we have 50 different airplanes in the Sky and the are landing via AirTraffic controll instructions. 
+They do not decide who will land first or last this job is done by Air Traffic Controll
