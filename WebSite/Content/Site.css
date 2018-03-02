@@ -192,10 +192,9 @@ pre {
     }
 
 .navbar-nav > li > a {
-    
     padding-top: 75px;
     padding-bottom: 8px;
-    padding-left: 40px;
+    padding-left: 9px;
 }
     .carousel-caption {
     top:5px;

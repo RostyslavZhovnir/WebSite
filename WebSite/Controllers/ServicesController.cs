@@ -9,7 +9,6 @@ using System.Web.Mvc;
 using WebSite.Models;
 using PagedList;
 using PagedList.Mvc;
-using WebSite.Helpers;
 
 namespace WebSite.Controllers
 {
@@ -17,14 +16,15 @@ namespace WebSite.Controllers
     {
         private TestikEntities db = new TestikEntities();
 
-     
+        // GET: AdTables
+        //[Authorize]
         public ActionResult Index(int?page)
         {
             IEnumerable<Services> services = db.Services.ToList().OrderByDescending(y => y.ID);
-            return View(services.ToList().ToPagedList(page ?? 1, 20));
+            return View(services.ToList().ToPagedList(page ?? 1, 50));
         }
 
-       
+        // GET: AdTables/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -41,13 +41,15 @@ namespace WebSite.Controllers
             return View(service);
         }
 
-     
+        // GET: AdTables/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        
+        // POST: AdTables/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Description,phone")] Services services,HttpPostedFileBase image1, HttpPostedFileBase image2) //ttpPostedFileBase image was new
@@ -67,7 +69,15 @@ namespace WebSite.Controllers
                     ViewBag.Ms = "Please upload image #1 first";
                     return View();
                 }
-                else if (CreateHelper.pictureNotImage1(image1))
+                else
+                if (image1.ContentType.ToLower() != "image/jpg" &&
+                   image1.ContentType.ToLower() != "image/jpeg" &&
+                    image1.ContentType.ToLower() != "image/pjpeg" &&
+                    image1.ContentType.ToLower() != "image/gif" &&
+                    image1.ContentType.ToLower() != "image/x-png" &&
+                    image1.ContentType.ToLower() != "image/png"
+
+                    )
                 {
                     ViewBag.Ms = "Only Image can be uploaded";
                     return View();
@@ -80,18 +90,36 @@ namespace WebSite.Controllers
                     db.SaveChanges();
                     return RedirectToAction("Index", "Services");
                 }
-                else if (CreateHelper.pictureNotImage(image1, image2))
+                else
+                if (image1.ContentType.ToLower() != "image/jpg" &&
+                   image1.ContentType.ToLower() != "image/jpeg" &&
+                    image1.ContentType.ToLower() != "image/pjpeg" &&
+                    image1.ContentType.ToLower() != "image/gif" &&
+                    image1.ContentType.ToLower() != "image/x-png" &&
+                    image1.ContentType.ToLower() != "image/png" ||
+                    image2.ContentType.ToLower() != "image/jpg" &&
+                    image2.ContentType.ToLower() != "image/jpeg" &&
+                    image2.ContentType.ToLower() != "image/pjpeg" &&
+                    image2.ContentType.ToLower() != "image/gif" &&
+                    image2.ContentType.ToLower() != "image/x-png" &&
+                    image2.ContentType.ToLower() != "image/png"
+                    )
                 {
                     ViewBag.Ms = "Only Image can be uploaded";
                     return View();
                 }
-            
-                else if (ModelState.IsValid)
+
+                else
+                if (ModelState.IsValid)
                 {
+                   
+
                 services.image = new byte[image1.ContentLength];
                 image1.InputStream.Read(services.image, 0, image1.ContentLength);
+
                 services.image1 = new byte[image2.ContentLength];
                 image2.InputStream.Read(services.image1, 0, image2.ContentLength);
+
                 db.Services.Add(services);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Services");
@@ -114,7 +142,7 @@ namespace WebSite.Controllers
            
         
 
-     
+        // GET: AdTables/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -129,7 +157,9 @@ namespace WebSite.Controllers
             return View(service);
         }
 
-        
+        // POST: AdTables/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Description,phone")] Services service)
@@ -143,7 +173,7 @@ namespace WebSite.Controllers
             return View(service);
         }
 
-    
+        // GET: AdTables/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -158,7 +188,7 @@ namespace WebSite.Controllers
             return View(service);
         }
 
-
+        // POST: AdTables/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

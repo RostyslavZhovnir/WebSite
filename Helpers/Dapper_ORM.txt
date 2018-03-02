@@ -1,9 +1,0 @@
- public List<Author> Read()
-    {
-        using (IDbConnection db = new SqlConnection 
-        (ConfigurationManager.ConnectionStrings [“AdventureWorks”].ConnectionString))
-        {
-            string readSp ="GetAllAuthors";//store procedure
-            return db.Query<Author>(readSp, commandType: CommandType.StoredProcedure).ToList();
-        }
-    }

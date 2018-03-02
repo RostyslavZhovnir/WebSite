@@ -11,7 +11,7 @@ namespace WebSite.Controllers
 {
     public class HomeController : Controller
     {
-       // private TestikEntities db = new TestikEntities();
+        private TestikEntities db = new TestikEntities();
 
         public ActionResult Index()
         {

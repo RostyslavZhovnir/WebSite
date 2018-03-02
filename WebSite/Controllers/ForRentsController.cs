@@ -10,7 +10,6 @@ using WebSite.Models;
 using PagedList;
 using PagedList.Mvc;
 using System.Globalization;
-using WebSite.Helpers;
 
 namespace WebSite.Controllers
 {
@@ -18,8 +17,10 @@ namespace WebSite.Controllers
     {
         private TestikEntities db = new TestikEntities();
 
+        
 
-
+        // GET: ForRents
+   
         public ActionResult Index( int ?price, int? page)
 
         {
@@ -27,16 +28,16 @@ namespace WebSite.Controllers
             if (price == null)
             {
                 IEnumerable<ForRent> forrents = db.ForRent.ToList().OrderByDescending(y => y.ID);
-                return View(forrents.ToList().ToPagedList(page ?? 1, 20));
+                return View(forrents.ToList().ToPagedList(page ?? 1, 50));
             }
-                IEnumerable<ForRent> forrent = db.ForRent.Where(x => x.price <= price);
-                return View(forrent.ToList().ToPagedList(page ?? 1, 20));
+            IEnumerable<ForRent> forrent = db.ForRent.Where(x => x.price <= price);
+                return View(forrent.ToList().ToPagedList(page ?? 1, 50));
 
             
             }
        
 
-       
+        // GET: ForRents/Details
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -44,7 +45,6 @@ namespace WebSite.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ForRent forRent = db.ForRent.Find(id);
-
             if (forRent == null)
             {
                 return HttpNotFound();
@@ -52,20 +52,20 @@ namespace WebSite.Controllers
             return View(forRent);
         }
 
-     
-
+        // GET: ForRents/Create
         public ActionResult Create()
         {
             return View();
         }
 
-    
+        // POST: ForRents/Create
       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Description,phone,price")] ForRent forRent, HttpPostedFileBase image1, HttpPostedFileBase image2)
         {
-         try { 
+           
+            try { 
 
             //{    //Check if Description already exist in database
             //    var y = forRent.Description.ToLower();
@@ -76,9 +76,13 @@ namespace WebSite.Controllers
             //        return View();
             //    }
 
-                     
+           
+           
+
             if (image1 == null && image2 == null)
                 {
+                    
+
                     db.ForRent.Add(forRent);
                     db.SaveChanges();
                     return RedirectToAction("Index", "ForRents");
@@ -88,12 +92,19 @@ namespace WebSite.Controllers
                     ViewBag.Ms = "Please upload image #1 first";
                     return View();
                 }
-                else if (CreateHelper.pictureNotImage1(image1))
+                else
+                if (image1.ContentType.ToLower() != "image/jpg" &&
+                   image1.ContentType.ToLower() != "image/jpeg" &&
+                    image1.ContentType.ToLower() != "image/pjpeg" &&
+                    image1.ContentType.ToLower() != "image/gif" &&
+                    image1.ContentType.ToLower() != "image/x-png" &&
+                    image1.ContentType.ToLower() != "image/png"
+
+                    )
                 {
                     ViewBag.Ms = "Only Image can be uploaded";
                     return View();
                 }
-                        
                 else if (image1 != null && image2 == null)
                 {
                     forRent.image = new byte[image1.ContentLength];
@@ -102,15 +113,27 @@ namespace WebSite.Controllers
                     db.SaveChanges();
                     return RedirectToAction("Index", "ForRents");
                 }
-                else if (CreateHelper.pictureNotImage(image1, image2)
-                     )
+                else
+                if (image1.ContentType.ToLower() != "image/jpg" &&
+                   image1.ContentType.ToLower() != "image/jpeg" &&
+                    image1.ContentType.ToLower() != "image/pjpeg" &&
+                    image1.ContentType.ToLower() != "image/gif" &&
+                    image1.ContentType.ToLower() != "image/x-png" &&
+                    image1.ContentType.ToLower() != "image/png" ||
+                    image2.ContentType.ToLower() != "image/jpg" &&
+                    image2.ContentType.ToLower() != "image/jpeg" &&
+                    image2.ContentType.ToLower() != "image/pjpeg" &&
+                    image2.ContentType.ToLower() != "image/gif" &&
+                    image2.ContentType.ToLower() != "image/x-png" &&
+                    image2.ContentType.ToLower() != "image/png"
+                    )
                 {
                     ViewBag.Ms = "Only Image can be uploaded";
                     return View();
                 }
 
-
-                else if (ModelState.IsValid)
+                else
+                if (ModelState.IsValid)
                 {
 
 
@@ -136,8 +159,8 @@ namespace WebSite.Controllers
             return View(forRent);
         }
 
+        // GET: ForRents/Edit
        
-
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -152,7 +175,7 @@ namespace WebSite.Controllers
             return View(forRent);
         }
 
-     
+        // POST: ForRents/Edit
         
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -167,8 +190,7 @@ namespace WebSite.Controllers
             return View(forRent);
         }
 
-      
-
+        // GET: ForRents/Delete
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -183,8 +205,7 @@ namespace WebSite.Controllers
             return View(forRent);
         }
 
-  
-
+        // POST: ForRents/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -194,8 +215,6 @@ namespace WebSite.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
 
         protected override void Dispose(bool disposing)
         {
