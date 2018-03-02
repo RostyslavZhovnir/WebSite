@@ -34,8 +34,6 @@ namespace WebSite.Controllers
         [HttpPost]
         public ActionResult Contact(string message, string phone, string email)
         {
-            
-           
                 MailMessage EmailText = new MailMessage(email, "rasty.home@gmail.com"); //from to emails
                 EmailText.Subject = "New Email from yavusa.com";
                 EmailText.Body = "Hello Admin,<br/> you have new message from: "+email+"<br/> Contact phone number: " + phone +"<br/>" + message;
